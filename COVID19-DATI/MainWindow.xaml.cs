@@ -28,11 +28,13 @@ namespace COVID19_DATI
         {
             InitializeComponent();
             carica();
-           
+
+            Lst_Thanks.Visibility = Visibility.Hidden;
+
         }
 
-       //Metodo per caricare dati da file xaml
-       public void carica()
+        //Metodo per caricare dati da file xaml
+        public void carica()
         {
 
 
@@ -61,20 +63,26 @@ namespace COVID19_DATI
 
         }
 
-        private void lst_exit_Selected(object sender, RoutedEventArgs e)
-        {
-            
-            System.Windows.Application.Current.Shutdown();
-        }
+      
 
        
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            Process.Start("https://github.com/pcm-dpc/COVID-19/tree/master/dati-andamento-nazionale");
+          
+                Process.Start("https://github.com/pcm-dpc/COVID-19/tree/master/dati-andamento-nazionale");
+            
+           
 
         }
 
-       
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Do you want to exit?", "Confirm", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                Application.Current.Shutdown();
+            }
+            
+        }
     }
 }

@@ -52,7 +52,7 @@
                 </Label.RenderTransform>
             </Label>
             <Label x:Name="label_Copy1" Content="          Recovered:" HorizontalAlignment="Left" VerticalAlignment="Top" Height="52" Width="316" FontSize="32" Foreground="White" OpacityMask="Black" Panel.ZIndex="-1" Canvas.Left="370" Canvas.Top="285" Background="Black"/>
-            <Label x:Name="lbl_Recovered" Content="0" Height="80" Width="338" FontSize="32" Foreground="#FF208516" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Top" Background="#00000000" BorderBrush="Black" OpacityMask="Black" Panel.ZIndex="-1" RenderTransformOrigin="0.5,0.5" Canvas.Left="494" Canvas.Top="354">
+            <Label x:Name="lbl_Recovered" Content="0" Height="80" Width="338" FontSize="32" Foreground="#FF5FC13A" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Top" Background="#00000000" BorderBrush="Black" OpacityMask="Black" Panel.ZIndex="-1" RenderTransformOrigin="0.5,0.5" Canvas.Left="494" Canvas.Top="354">
                 <Label.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -83,28 +83,28 @@
                         <TranslateTransform/>
                     </TransformGroup>
                 </Grid.RenderTransform>
-                <StackPanel Margin="0,0,-4,0">
-                    <Image Height="102" Source="Coronavirus.png" Stretch="Fill" Margin="0,0,5,0"/>
-                    <ListView Foreground="#FF313131" FontFamily="Champagne &amp; Limousines" FontSize="18" Margin="0,0,3,0">
-                        <ListViewItem Height="45" Padding="0" Foreground="#FF897272" Background="Black" Width="198">
+                <StackPanel Margin="0,0,-8,0">
+                    <Image Height="102" Source="Coronavirus.png" Stretch="Fill" Margin="0,0,8,0"/>
+                    <ListView x:Name="lst_Menu" Foreground="#FF313131" FontFamily="Champagne &amp; Limousines" FontSize="18" Margin="0,0,3,0">
+                        <ListViewItem x:Name="lst_Id" Height="45" Padding="0" Foreground="#FF897272" Background="Black" Width="193">
                             <StackPanel Orientation="Horizontal" Width="187">
                                 <materialDesign:PackIcon Kind="AlphaGBoxOutline" Width="31" Height="28" Foreground="#FFF08033" Margin="5" VerticalAlignment="Center"/>
                                 <TextBlock Text="Gurpreet singh" Margin="10"/>
                             </StackPanel>
                         </ListViewItem>
-                        <ListViewItem Height="45" Padding="0" Foreground="#FF897272">
+                        <ListViewItem Height="45" Padding="0" Foreground="#FF897272" Width="198">
                             <StackPanel Orientation="Horizontal" Margin="10 0">
                                 <materialDesign:PackIcon Kind="HelpCircleOutline" Width="20" Height="20" Foreground="#FFF08033" Margin="5" VerticalAlignment="Center"/>
                                 <TextBlock Text="   Help" Margin="10"/>
                             </StackPanel>
                         </ListViewItem>
-                        <ListViewItem Height="45" Padding="0">
+                        <ListViewItem Height="45" Padding="0" Width="202">
                             <StackPanel Orientation="Horizontal" Margin="10 0">
                                 <materialDesign:PackIcon Kind="Lightbulb" Width="20" Height="20" Foreground="Green" Margin="5" VerticalAlignment="Center"/>
                                 <TextBlock Text="   Send Feedback" Margin="10" Foreground="#FF897272"/>
                             </StackPanel>
                         </ListViewItem>
-                        <ListViewItem Height="45" Padding="0" Foreground="#FF897272">
+                        <ListViewItem Height="45" Padding="0" Foreground="#FF897272" Width="204">
                             <StackPanel Orientation="Horizontal" Margin="10 0" Background="Black">
                                 <TextBlock><InlineUIContainer>
                                     
@@ -115,21 +115,23 @@
 
                             </StackPanel>
                         </ListViewItem>
-                        <ListViewItem x:Name="lst_exit" Height="45" Padding="0" Selected="lst_exit_Selected">
+                        <ListViewItem x:Name="lst_exit" Height="45" Padding="0" Width="204">
                             <StackPanel Orientation="Horizontal" Margin="10 0" Width="120">
                                 <materialDesign:PackIcon Kind="ExitToApp" Width="20" Height="20" Foreground="#FF0069C1" Margin="5" VerticalAlignment="Center"/>
-                                <TextBlock Text="   Exit" Margin="10" Foreground="#FF897272"/>
+                                <Button Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF897272" Click="Button_Click_1">Exit</Button>
                             </StackPanel>
                         </ListViewItem>
-                        <ListViewItem >
-                            <StackPanel Orientation="Horizontal" Margin="10 0" Width="165" Height="45">
-                                <materialDesign:PackIcon Kind="Smiley" Width="20" Height="20" Foreground="#FF0069C1" Margin="5" VerticalAlignment="Center"/>
-                                <TextBlock Text="Like our App? " Margin="10" Foreground="#FF897272"/>
-                            </StackPanel>
-                        </ListViewItem>
-                        <TextBlock><InlineUIContainer>
-                                <materialDesign:RatingBar Foreground="#FF5DF307" Height="32" Width="192"/>
+                        <ListViewItem  IsEnabled="True"/>
+                        <StackPanel  Orientation="Horizontal" Width="165" Height="45">
+                            <materialDesign:PackIcon Kind="SmileyCoolOutline" Width="27" Height="27" Foreground="#FF46C100" Margin="5,12,5,6" VerticalAlignment="Center"/>
+                            <TextBlock Text="Like our App? " Margin="10,19,10,2" Foreground="#FF897272"/>
+                        </StackPanel>
+                        <ListViewItem Width="201">
+                            <TextBlock><InlineUIContainer>
+                                <materialDesign:RatingBar x:Name="Rate_Bar" Foreground="#FF5DF307" Height="32" Width="124"/>
                             </InlineUIContainer></TextBlock>
+                        </ListViewItem>
+                        <ListViewItem x:Name="Lst_Thanks" Width="204"/>
                     </ListView>
                 </StackPanel>
 
@@ -137,6 +139,7 @@
 
         </Canvas>
 
+        <StackPanel/>
 
     </Grid>
 
